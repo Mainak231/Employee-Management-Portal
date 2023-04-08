@@ -3,9 +3,12 @@
 This is a demo employee management portal app created using angular and java backend.
 Implemented the concept of spring security to secure REST endpoints and used basic Auth(HttpInterceptor) for creating token based authentication.
 
-Below are some images of the demo app.
+<h1> Languages used </h1>
+Frontend : Angular, Bootstrap <br>
+Backend : Java <br>
+Database : MySQL <br>
 
-
+<h1> Screenshots </h1>
 <div>
     <img width="1440" alt="Screenshot 2023-04-08 at 11 19 45 AM" src="https://user-images.githubusercontent.com/61400087/230706506-0cf12a83-fea2-4a8e-af9d-f33d7e34af02.png">
   <img width="1440" alt="Screenshot 2023-04-08 at 11 20 01 AM" src="https://user-images.githubusercontent.com/61400087/230706512-19c6845a-7b7a-42ba-861f-de0c5da2c5fa.png">
