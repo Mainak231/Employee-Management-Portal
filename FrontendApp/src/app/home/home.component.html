@@ -1,0 +1,64 @@
+<body>
+    <div class="container-fluid">
+        <div class="row ">
+            <nav class="navbar navbar-light bg-dark">
+                <div class="container-fluid">
+                    <span class="navbar-brand mb-0 text-white">Hello, &nbsp;{{username}}</span>
+                </div>
+            </nav>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-lg-9 mx-3">
+                <button class="btn btn-success" (click)="showEmpTable()">Show Employees</button>
+                <button class="btn btn-success mx-2" type="button" [disabled]="!checkAdmin"
+                    (click)="handleRegister()">Register Employee</button>
+                <button class="btn btn-success" (click)="handleLogout()">Logout</button>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-lg-9 mx-3">
+                <div *ngIf="showTable && !empList.length">
+                    <div>
+                        <label>Loading table</label>&nbsp;
+                        <div class="spinner-border mt-5" role="status">
+                            <span class="sr-only"></span>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="showTable && empList.length">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Employee Id</th>
+                                <th>Full Name</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th> Email</th>
+                                <th>Address</th>
+                                <th>Designation</th>
+                                <th>Salary</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let emp of empList;let i = index">
+                            <tr>
+                                <th scope="row">{{emp.emp_id}}</th>
+                                <td><a [routerLink]="['/userDetail',emp.emp_id]"
+                                        (click)="sendId(emp.emp_id)">{{firstnames[i] | titlecase}} {{lastnames[i] |
+                                        titlecase}}</a></td>
+                                <td>{{firstnames[i] | titlecase}}</td>
+                                <td>{{lastnames[i] | titlecase}}</td>
+                                <td>{{emp.email}}</td>
+                                <td>{{emp.address}}</td>
+                                <td>{{emp.designation | uppercase}}</td>
+                                <td>{{emp.salary | currency:'INR'}}</td>
+                                <td><button (click)="deleteEmployeeDetails(emp.emp_id)">Delete</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

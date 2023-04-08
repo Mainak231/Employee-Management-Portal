@@ -1,0 +1,43 @@
+<!-- <p>user-details works!</p> -->
+<div class="container">
+    <div class="row mt-4">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-header ">
+                    <span class="mt-4">Employee Detail</span>
+                    <div style="float: right;">
+                        <button class="btn btn-success mx-2" [disabled]="!checkAdmin">Edit</button>
+                        <button class="btn btn-success">Save</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-3 ">
+                            <img src="../assets/blue-user-icon-32.jpg" alt="userlogo">
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="row">
+                                <div class="col">
+                                    <label><strong>First Name : </strong>  {{empDetails.name.firstName}}</label>
+                                    <label class="mx-4"><strong>Last Name :</strong> {{empDetails.name.lastName}} </label>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <label><strong>Email :</strong> {{empDetails.email}}</label>
+                            </div>
+                            <div class="row mt-3">
+                                <label><strong>Address:</strong> {{empDetails.address}}</label>
+                            </div>
+                            <div class="row mt-3">
+                                <label><strong>Salary:</strong>{{empDetails.salary | currency:'INR'}}</label>
+                            </div>
+                            <div class="row mt-3">
+                                <label><strong>Designation:</strong> {{empDetails.designation}}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
